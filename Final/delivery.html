@@ -1,0 +1,164 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<!-- Programmer: Andy Li 
+		     Project: Final
+			 Class: IFT 301
+			 Semester: Fall 2018-->
+<meta charset="UTF-8">
+<title>Order Form</title>
+<style>
+	header{
+		background-color: FireBrick;
+		margin: 5px;
+		margin-bottom: 0px;
+		border-style: solid;
+		border-width: 5px;
+		border-bottom-style: none;
+	}
+	nav{		
+		background-color: FireBrick;	
+		border-style: solid;
+		border-width: 5px;
+	}
+	ul.nav{
+		list-style-type: none;
+	}
+	ul>li{
+		display:inline
+	}
+	li a{
+		
+		color: white;
+		text-align: center;
+		padding: 14px 16px;
+	}
+	section{
+		text-align: center;
+		background-color: wheat
+	}
+	aside{
+		background-color: wheat;		
+	}
+	body{
+		background-image: url("http://blog.hepdata.com/wp-content/uploads/2016/07/LA-backdrop-621x274.png");
+		background-color: #FDF5E6;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	img{
+		width: 200px;
+	}
+	form{
+		text-align: left;
+		margin: auto;
+		width: 50%;
+		padding: 10px;
+	}
+</style>
+</head>
+
+<body>
+	<header>
+		<a href="homePage.html">
+			<img src="img/Logo.png" alt = "Logo of Restaurant">
+		</a>
+	</header>
+	<!-- Nav Bar -->
+	<nav>
+		<ul>
+			<li><a href="homePage.html">Home</a></li>
+			<li><a href="menu.html">Shop Hotdogs</a></li>
+			<li><a href="contact.html">Contact Us</a></li>
+		</ul>
+	</nav>
+	<!-- Nav Bar End-->
+	<section>
+		<h1>How do You want your Hot Dog Today?</h1>
+		<!-- User Selects Method -->	
+			<a href="delivery.html">
+			<img src="https://cdn4.iconfinder.com/data/icons/tech-support-4/28/speedy_delivery-512.png" alt = "Delivery">
+		</a>
+		<a href="checkout.html">
+			<img src="https://cdn3.iconfinder.com/data/icons/restaurant-34/24/takeout_food_carryout_chinese_fast-512.png" alt = "Carry Out">
+		</a>
+		<form>
+			<fieldset>
+				<label>Address Type: 
+				<select name="addressType">
+					<option value="hou" selected>House</option>
+					<option value="apt">Apartement</option>
+					<option value="bus">Business</option>
+					<option value="cmp">Campus/Base</option>
+					<option value="hot">Hotel</option>
+					<option value="oth">Other</option>				
+				</select></label>				
+				<label>Street Address:  
+				<input type="text" name="address" /><br /></label>
+				<label>Suite/Apt# :  
+				<input type="text" name="aptNum" /><br /></label>
+				<label>City:  
+				<input type="text" name="city" /><br /></label>
+				<label>State: 
+				<select name="addressType">
+					<option value="Select" selected>select</option>
+					<option value="AL">AL</option>
+					<option value="AK">AK</option>
+					<option value="AZ">AZ</option>
+					<option value="AR">AR</option>
+					<option value="CA">CA</option>
+					<option value="CO">CO</option>
+					<option value="CT">CT</option>
+					<option value="DE">DE</option>
+					<option value="FL">FL</option>
+					<option value="GA">GA</option>
+					<option value="HI">HI</option>
+					<option value="ID">ID</option>
+					<option value="IL">IL</option>
+					<option value="IN">IN</option>	
+					<option value="IA">IA</option>
+					<option value="KS">KS</option>
+					<option value="KY">KY</option>
+					<option value="LA">LA</option>
+					<option value="ME">ME</option>
+					<option value="MD">MD</option>
+					<option value="MA">MA</option>	
+					<option value="MI">MI</option>
+					<option value="MN">MN</option>
+					<option value="MS">MS</option>
+					<option value="MO">MO</option>
+					<option value="MT">MT</option>
+					<option value="NE">NE</option>
+					<option value="NV">NV</option>	
+					<option value="NH">NH</option>
+					<option value="NJ">NJ</option>
+					<option value="NM">NM</option>
+					<option value="NY">NY</option>
+					<option value="NC">NC</option>
+					<option value="ND">ND</option>
+					<option value="OH">OH</option>	
+					<option value="OK">OK</option>
+					<option value="OR">OR</option>
+					<option value="PA">PA</option>	
+					<option value="RI">RI</option>
+					<option value="SC">SC</option>
+					<option value="SD">SD</option>
+					<option value="TN">TN</option>
+					<option value="TX">TX</option>
+					<option value="UT">UT</option>
+					<option value="VT">VT</option>	
+					<option value="VA">VA</option>
+					<option value="WA">WA</option>
+					<option value="WV">WV</option>
+					<option value="WI">WI</option>
+					<option value="WY">WY</option>					
+				</select></label>	
+				<label>Zip Code:  
+				<input type="text" name="zip" /><br /></label>
+				<button type="submit" formaction="takeoutform.html">Continue for Delivery</button>
+			</fieldset>
+		</form>
+		
+	</section>
+</body>
+</html>

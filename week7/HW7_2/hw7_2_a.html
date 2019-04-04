@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Programmer: Andy Li 
+		     Project: HW7_2_a
+			 Class: IFT 301
+			 Semester: Fall 2018-->
+    <meta charset="UTF-8">	
+    <title>Calculate NETPAY</title>
+    <script>
+	   
+	   var NETPAY;
+	   var GROSSPAY;
+	   var TAXES;
+	   var DEDUCTIONS;
+	   
+	   //prompts
+	   GROSSPAY = 
+			prompt("Enter Gross pay","");
+		GROSSPAY = parseFloat(GROSSPAY);
+	   TAXES = 
+			prompt("Enter Taxes","");
+		TAXES = parseFloat(TAXES)/100;
+	   DEDUCTIONS =
+			prompt("Enter Deductions","");
+		DEDUCTIONS = parseFloat(DEDUCTIONS);
+		
+	   NETPAY = GROSSPAY - (GROSSPAY*TAXES) - DEDUCTIONS;
+	   alert("With a gross pay of : "+GROSSPAY+"\n and taxes of :"+TAXES*100+"%\n"+"Deductions: "+DEDUCTIONS+"\nNet pay is: "+NETPAY);	   	   	   
+    </script>
+</head>
+<body>
+    <main>
+        <h1>Thanks for using the Netpay calculator</h1>
+    </main>
+</body>
+</html>

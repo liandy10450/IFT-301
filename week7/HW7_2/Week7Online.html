@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Javascript Assignment Week 7</title>
+  </head>	
+  
+<body>
+
+<script type="text/javascript">
+var name = "Prof Usha Jagannathan"
+document.write("<h2> Hi everyone! This message is from "+name+" - Follow the instructions below to work on your Week 7 HW assignment!</h2>")
+function myfunction()
+{
+alert("HELLO!")
+}
+function myotherfunction()
+{
+alert("Thank you for finishing the assignment, GOODBYE!")
+}
+function close_window()
+{
+ if (confirm("Close Window?")) 
+  {
+    close();
+  }
+}
+function total(a,b)
+{
+answer = a+b
+document.write("Our class student team consists of " + a + " girls and " + b + " lads: ")
+
+return answer // you can also write it without using another variable as answer like this: return a+b
+}
+	 
+document.write("We are a total of " + total(12,54) + " students in this IFT301 online course! :)")
+document.write("<br /> <p />")
+	 
+// Few examples on functions shown above...
+// Now, write a javascript function to find Netpay and display it on your browser to show the result. (25 POINTS)
+// GROSSPAY is your (emoloyee's) wages BEFORE any deductions that include TAXES and DEDUCTIONS withheld
+// The variables are the ones shown in caps above. Calcuate the Netpay using the 3 variables.
+// Accept the variables from the user and do not manually enter values as shown above - You may use window prompts or a form to get the user input.
+	 
+// Written a javascript code to show how to display a clock on your website 
+// NOTE: Your job is to display the clock in our sundevil colors with gold background color and maroon text color. 
+// Also, you should display the clock in the far-right corner. 
+// Refer to Chapter 15 in our text to recall the layout positions 
+ 
+function startTime()
+{
+var today=new Date()
+var hr=today.getHours()
+var min=today.getMinutes()
+var sec=today.getSeconds()
+var ap="AM";
+
+//to add AM or PM after time
+// Add IF statement using the above declared variables to display your clock in AM and PM
+
+if(hr>11) ap="PM";
+if(hr>12) hr=hr-12;
+if(hr==0) hr=12;
+
+//to add a zero in front of numbers<10
+
+min=checkTime(min)
+sec=checkTime(sec)
+
+document.getElementById('clock').innerHTML=hr+":"+min+":"+sec+" "+ap
+t=setTimeout('startTime()', 500)
+}
+
+function checkTime(i)
+{
+if (i<10)
+{ i="0" + i}
+return i
+}
+// Added window prompt to call the onload event to display the time when page loads
+window.onload=startTime;
+</script>
+
+<!-- you can have multiple javascripts in one HTML file -->
+
+<script type="text/javascript">
+//photos: will hold the filename of each image to be displayed
+//photoindex: is the index of the photo, within the photos[] array, that is currently displayed
+
+var photos = new Array();
+var photoindex = 0;
+
+//populate the photos[] array
+photos[0]="https://media.giphy.com/media/r7u3x1T2HODu0/giphy.gif";
+photos[1]="https://img.grouponcdn.com/deal/2F9YsPUKUNLxs5NrdnMC/7T-2400x1454/v1/c700x420.jpg";
+photos[2]="https://d194ip2226q57d.cloudfront.net/images/Instant_Karma_Gourmet_Hot_Dogs.original.jpg";
+photos[3]="https://chevydetroit.com/wp-content/uploads/2014/07/Gourmet-Dogs.jpg";
+photos[4]="https://www.gogogogourmet.com/wp-content/uploads/2015/04/Parmesan-Fries2.jpg";
+<!-- photos[5]="WhyIT4a.jpg"; -->
+<!-- photos[6]="WhyIT5.jpg"; -->
+<!-- photos[7]="weloveweb.png"; -->
+<!-- photos[8]="WhyIT6.jpg"; -->
+<!-- photos[9]="WhyIT8.jpg"; -->
+<!-- photos[10]="WhyIT7.jpg"; -->
+<!-- photos[11]="ITHolidayImage.gif"; -->
+
+//move backward, by one, within the photos array
+//check to be sure that you are not moving outside of the array bounds
+function backward()
+{
+	if (photoindex > 0)
+	{
+		document.images.p.src = photos[--photoindex];
+	}
+}
+
+//move forward, by one, within the photos array
+//check to be sure that you are not moving outside of the array bounds
+function forward()
+{
+	if (photoindex < photos.length-1)
+	{
+	  document.images.p.src = photos[++photoindex];
+	}			
+}
+
+//go to a particular photo within the photos array
+//check to be sure that you are not moving outside of the array bounds
+function goto(n)
+{
+	if (n < photos.length && n >= 0)
+	{
+	  photoindex = n;
+	  document.images.p.src = photos[photoindex];
+	}			
+}
+  //-->
+  </script>
+  
+<!-- onkeypress="window.alert('Welcome ' + document.welcomeform.yourname.value);" -->
+
+
+<p> <a href="javascript: myfunction();">Launch to begin with javascript coding</a></p>
+
+<div id="clock" style="font-size:36px;border:3px groove maroon;text-shadow:2px 2px 2px maroon;
+width:200px; height:50px; float:right; background-color: #FFD700; color: #800000"></div>
+<BR/ >
+	
+<form name="welcomeform" action = "">
+	 Enter your name: <input type="text" name="yourname" />
+	<input type="button" value="Let's get started" onClick="window.alert('Welcome ' + document.welcomeform.yourname.value);" /> 
+</form> <BR />
+<hr/>
+<p style="color:maroon;"> Use this Week7Online.html file as the source. Only for question (1) specified below, the code needs to be written. 
+(You may turn in as two files: html and js files (OR) you may add the javascript code within the html file and submit it as one file). </p>
+ <p> Quesstion (1): Write a javascript function to find NETPAY and display it on your browser to show the result.(Max. 25 POINTS) </p>
+Details: <BR />
+<ul>
+  <li> GROSSPAY is your (employee's) wages BEFORE any deductions that include TAXES and DEDUCTIONS withheld </li>
+  <li> The variables are the ones shown in caps above. Calcuate the Netpay using the 3 variables. </li>
+  <li> Accept the values for the 3 variables from the user and do not manually enter values as shown above - You need a form to do that. </li>
+</ul>
+<hr/>
+
+<p style="color:maroon;"> For question (2) below, just add the necessary CSS properties to the digital clock to position 
+the clock to the top right corner in the #clock attribute that is already provided in the code. </p>
+<p> Question (2): Javascript code is written for this part. However, you have to do the following. (Max. 10 POINTS) </p>
+Details: <BR />
+<ul>
+   <li> Display the clock in our sundevil colors with gold background color and maroon text color. Use only HEX or RBG color codes. </li>
+   <li> Also, you should display the clock in the far-right corner. </li>
+</ul>
+<hr/>
+
+<p style="color:maroon;"> For question (3) below, you have to replace with your own images for the image carousel and change the numbers underneath to show thumbnails instead. </p>
+<p> Question (3): Design an image gallery (3-5 pictures should be enough), similar to below relating to your FINAL PROJECT WEBSITE TOPIC, using some of the Image object methods and properties
+- You may refer to Chapter 3 Javascript PPT shared under Week 7 resources.(Max. 15 POINTS) </p>
+
+Details: <BR />
+<ul>
+  <li> A simple image gallery</li>
+  <li> The &lt;&lt; link moves you one back in the gallery</li>
+  <li> The &gt;&gt; link moves you one forward</li>
+  <li> The numbers allow you to go to a specfic photo</li>
+  <li> Featured image carousel picture roll: Why IT field is so AWESOME?</li>
+</ul>
+      <br>
+	  <div style="text-align:center;left:5px;">
+      <table width="250" border="0" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td colspan="3" align="center" valign="top"> 
+<img src="img/Logo.png" name="p" width="250" height="188" id="p" /></td>
+        </tr>
+        <tr>
+          <td valign="top"><a href="javascript: backward();">&lt;&lt;</a></td>
+          <td valign="top" style="text-align: center"> 
+         <script type="text/javascript">
+		  <!--
+		  /*for loop creates the numbered links. although they could be hand-coded,
+		  the for loop, combined with a document.write() statement, automates the process
+		  */
+		  for (i = 0; i < photos.length; i++)
+		  {
+		  	document.write("<a href=\"javascript: goto(" + i + ");\"><img src='" + photos[i] + "' width='60' /></a> ");
+			
+		  } 
+		  -->
+
+		  </script>
+		  </td>
+          <td valign="top" style="text-align: right"><a href="javascript: forward();">&gt;&gt;</a></td>
+        </tr>
+      </table>
+	  </div>	
+<hr/>
+<p />
+<p> <a href="javascript: alert('Wasn\'t that fun?'); myotherfunction(); close_window();">Launch to end the javascript program</a>
+</p> 
+	
+</body>
+
+</html>

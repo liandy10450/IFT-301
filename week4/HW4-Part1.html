@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<!-- Programmer: Andy Li 
+		     Project: HW4-Part1
+			 Class: IFT 301
+			 Semester: Fall 2018-->
+<meta charset="UTF-8">
+<title>Habitat Form</title>
+<style>
+	header{
+		background-color: white;
+		margin: 5px;
+	}
+	body{
+		background-color: #DCDCDC;		
+	}
+	section{		
+		background-color: white;
+		background-image: url("https://myasucourses.asu.edu/bbcswebdav/pid-19091155-dt-content-rid-135139373_1/xid-135139373_1");
+		background-repeat: no-repeat;
+		padding-bottom: 50px;
+		padding-left: 15px;
+		width: auto;
+		height: auto;
+	}
+	nav{
+		float: left;
+		width: 150px;
+		height: 600px;
+		background-color: #DCDCDC;
+		padding-right:50px 
+	}
+	ul>li{
+		list-style:none;
+		padding: 5px 5px 5px 15px;
+		display: block; 
+		text-decoration: none;
+		background:#00CED1;
+		color:#ffffff;
+		margin-bottom: 15px;
+		margin-left:0;
+		box-shadow: 5px 10px #708090;
+	}
+	textarea{
+		color:#DCDCDC;
+	}
+	
+</style>
+</head>
+
+<body>
+	<header>
+		<img src="https://myasucourses.asu.edu/bbcswebdav/pid-19091155-dt-content-rid-135139377_1/xid-135139377_1" alt="logo of habitat">
+	</header>
+	<nav>
+		<ul>
+			<li><a href="http://www.habitat.org/about">Learn more</a></li>
+			<li><a href="http://www.habitat.org/volunteer">Volunteer</a></li>
+			<li><a href="http://www.habitat.org/about/advocacy">Advocate</a></li>
+			<li><a href="https://www.habitat.org/donate/">Donate</a></li>
+		</ul>
+	</nav>
+	<section>		
+		<h1>Registration Form</h1>	
+		<form>
+			<fieldset>
+				<legend>Personal Information</legend>
+				<label>Title
+				<input type="text" name="title" /><br /></label>
+				<label>First Name
+				<input type="text" name="firstName" /><br /></label>
+				<label>Last Name
+				<input type="text" name="lastName" /><br /></label>
+				<label>Date of Birth
+				<input type="text" name="dBirth" /><br /></label>
+				<label>Best Home Building Skill:<br />
+				<textarea name="comment" cols="30" rows="4" placeholder="Enter comment">Carpentry</textarea><br></label>
+			</fieldset>
+			<fieldset>
+				<legend>Experience</legend>
+				<label>Years of Home Building Experience:0
+				<input type="range" min="0" max="10">10+<br /></label>
+				<label>Number of Habitat Homes Built:
+				<input type="text" name="numHomeBuilt" maxlength="4" size="4"><br /></label>
+				<button type="submit">Submit Form</button><button type="submit" formtarget="_blank">Submit Form to a New Window</button>
+			</fieldset>
+		</form>
+	</section>
+</body>
+</html>

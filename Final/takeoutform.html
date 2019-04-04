@@ -1,0 +1,234 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<!-- Programmer: Andy Li 
+		     Project: Final
+			 Class: IFT 301
+			 Semester: Fall 2018-->
+<meta charset="UTF-8">
+<title>Order Form</title>
+<style>
+	header{
+		background-color: FireBrick;
+		margin: 5px;
+		margin-bottom: 0px;
+		border-style: solid;
+		border-width: 5px;
+		border-bottom-style: none;
+	}
+	nav{		
+		background-color: FireBrick;	
+		border-style: solid;
+		border-width: 5px;
+	}
+	ul.nav{
+		list-style-type: none;
+		margin: 0;
+		padding: 0;		
+	}
+	ul>li{
+		display:inline
+	}
+	li a{
+		
+		color: white;
+		text-align: center;
+		padding: 14px 16px;
+	}
+	section{
+		text-align: center;
+	}
+	body{
+		background-color: #FDF5E6		
+	}
+	h3{
+		text-align: center;
+	}
+	img{
+		width: 200px;
+	}	
+	.leftContainer{
+		width: 200px;
+		float: left;
+	}
+	.rightContainer{
+		margin-top: 100px;
+		float: right;
+	}
+	.rightContainer > *{
+		margin: 50px 0;
+	}
+</style>
+<script>
+	"use strict";
+	var cartQuantity =[0, 0, 0, 0, 0, 0, 0, 0, 0];//all items initialized to 0
+	var itemPrices = [3.50, 3.50, 3.50, 2.50, 5.00, 4.50, 1.50, 3.50, 1.50];//prices corresponding to item
+	
+	document.getElementById("order").onsubmit = function() {
+		submit_order()
+	};
+	var $ = function (id) 
+{
+    return document.getElementById(id); 
+} // standard $ function
+	//submit current quantity for order
+	var submit_order = function (){
+		var total = 0;
+		var tax = .081;
+		var txt;
+		//update cart quantity
+		//hotdogs
+		cartQuantity[0] = parseInt(document.getElementById("hotdog1").value);
+		cartQuantity[1] = parseInt(document.getElementById("hotdog2").value);
+		cartQuantity[2] = parseInt(document.getElementById("hotdog3").value);
+		//sides
+		cartQuantity[3] = parseInt(document.getElementById("sides1").value);
+		cartQuantity[4] = parseInt(document.getElementById("sides2").value);
+		cartQuantity[5] = parseInt(document.getElementById("sides3").value);
+		//drinks
+		cartQuantity[6] = parseInt(document.getElementById("drink1").value);
+		cartQuantity[7] = parseInt(document.getElementById("drink2").value);
+		cartQuantity[8] = parseInt(document.getElementById("drink3").value);
+		
+		//calculate price
+		for(var i = 0; i < cartQuantity.length; i++){
+			total += cartQuantity[i] * itemPrices[i];
+		}
+		if(total <= 0){
+			alert("You haven't ordered anything!");
+		}
+		else{
+			var subTotal = total + (total*tax);
+			//print recite
+			for(var i =0; i < cartQuantity.length; i++){
+				if(cartQuantity[i] >0){
+					switch(i){
+						case 0:
+							txt += "Original Dog - $3.50: x"+cartQuantity[i];
+							break;
+						case 1:
+							txt += "\nInstant Karma Dog - $3.50: x"+cartQuantity[i];
+							break;
+						case 2:
+							txt += "\nVeggie Dog - $3.50: x"+cartQuantity[i];
+							break;
+						case 3:
+							txt += "\nParmesan Herb Fries - $2.50: x"+cartQuantity[i];
+							break;
+						case 4:
+							txt += "\nFully Loaded Fries - $5.00: x"+cartQuantity[i];
+							break;
+						case 5:
+							txt += "\nChili Cheese Fries - $4.50: x"+cartQuantity[i];
+							break;
+						case 6:
+							txt += "\nCola - $1.50: x"+cartQuantity[i];
+							break;
+						case 7:
+							txt += "\nBeer - $3.50: x"+cartQuantity[i];
+							break;
+						case 8:
+							txt += "\nIced Tea - $1.50: x"+cartQuantity[i];
+							break;
+						default:
+							break;
+					}
+				}	
+			}
+			
+			txt += "Total: "+total+"\n";
+			txt += "Tax: "+tax*100+"\n";
+			txt += "Subtotal: "+ subTotal+"\n";
+			
+		
+			if(confirm("You've Ordered: \n"+txt)){
+				alert("You've Submitted Your Order");
+			}
+			else{
+				alert("You've Cancelled Your Order");
+			}
+				
+		}
+	
+	//reset values back to 0
+	function reset_order() {
+		document.getElementById("order").reset();
+	}
+	window.onload = function () {
+	$("submitOrder").onclick = submit_order;
+	$("resetOrder").onclick = reset_order;
+}
+</script>
+</head>
+
+<body>
+	<header>
+		<a href="homePage.html">
+			<img src="img/Logo.png" alt = "Logo of Restaurant">
+		</a>
+	</header>
+	<!-- Nav Bar -->
+	<nav>
+		<ul>
+			<li><a href="homePage.html">Home</a></li>
+			<li><a href="menu.html">Shop Hotdogs</a></li>
+			<li><a href="contact.html">Contact Us</a></li>
+		</ul>
+	</nav>
+	<!-- Nav Bar End-->	
+	<section style="border: 1px black solid; background-color: white; padding: 10px; width: 75%; margin: auto">
+		<h1>How Do You Want your hotdog today?</h1>
+		<form id="order">
+		<!-- User Selects Method -->		
+			<div class ="leftContainer">
+				<h3>Hotdogs</h3>
+				<img src="https://img.grouponcdn.com/deal/2F9YsPUKUNLxs5NrdnMC/7T-2400x1454/v1/c700x420.jpg" alt="Gourmet Hotdog">
+				<img src="https://d194ip2226q57d.cloudfront.net/images/Instant_Karma_Gourmet_Hot_Dogs.original.jpg" alt="siracha hotdog">
+				<img src="https://chevydetroit.com/wp-content/uploads/2014/07/Gourmet-Dogs.jpg" alt="Hotdog with Vegetables">
+				
+				<h3>Sides</h3>
+				<img src="https://www.gogogogourmet.com/wp-content/uploads/2015/04/Parmesan-Fries2.jpg" alt="French Fries Garlic and Parmesan Seasoned">
+				<img src="http://res.cloudinary.com/culturemap-com/image/upload/q_auto/ar_4:3,c_fill,g_faces:center,w_1200/v1494876332/photos/229218_original.jpg" alt="French Fries with bbq pork">
+				<img src="https://www.mrsgrimesbeans.com/wp-content/uploads/2015/09/ChiliCheeseFries_cropped_720x480_72_RGB.jpg" alt="Chili French Fries">
+				
+				<h3>Drinks</h3>
+				Cola<br />
+				Beer<br />
+				Ice Tea<br />
+				
+			</div>
+			<div class = "rightContainer">
+				$3.50 - Original Dog 
+				<input type="number" name="hotdog1" min="0" value = "0"><br />
+			
+				$3.50 - Instant Karma Dog 
+				<input type="number" name="hotdog2" min="0" value = "0"><br />
+
+				$3.50 - Veggie Dog 
+				<input type="number" name="hotdog3" min="0" value = "0"><br />
+				<br /><br /><br /><br /><br /><br />
+				$2.50 - Parmesan Herb Fries 
+				<input type="number" name="sides1" min="0" value = "0"><br />
+			
+				$5.00 - Fully Loaded Fries 
+				<input type="number" name="sides2" min="0" value = "0"><br />
+			
+				$4.50 - Chili Cheese Fries 
+				<input type="number" name="sides3" min="0" value = "0"><br />
+				
+				$1.50
+				<input type="number" name="drink1" min="0" value = "0"><br />
+				$3.50
+				<input type="number" name="drink2" min="0" value = "0"><br />
+				$1.50
+				<input type="number" name="drink3" min="0" value = "0"><br />
+				
+				<input type="submit" id="submitOrder" onclick="submit_order()" value="Checkout Cart">
+				<input type="button" onclick="reset_order()" value="Reset Order">
+			</div>		
+		
+		</form>
+	</section>
+	<p id="recite"></p>
+</body>
+</html>

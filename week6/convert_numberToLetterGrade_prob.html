@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Programmer: Andy Li 
+		     Project: HW6_2
+			 Class: IFT 301
+			 Semester: Fall 2018-->
+	<meta charset="utf-8">
+	<title>Show letter grade</title>
+	<script>
+		//runs infinitely until  user inputs 999 to break
+		while(true){
+			var isValid=true;
+			var numGrade =
+				prompt("Enter number grade from 0 through 100\nOr enter 999 to end entries","999");
+			numGrade=parseFloat(numGrade);
+			if(numGrade==999){//breaks out of loop
+				break;
+			}
+			//check if input valid between 0-100
+			if(numGrade<0 || numGrade>100){
+				isValid=false;
+				//alert("You entered "+numGrade+"\nPlease enter number between 0-100");
+			}
+			if(isValid){
+				if(numGrade > 87){
+					alert("Number grade = "+numGrade+"\nLetter grade = A");
+				}
+				else if(numGrade > 79){
+					alert("Number grade = "+numGrade+"\nLetter grade = B");
+				}
+				else if(numGrade > 67){
+					alert("Number grade = "+numGrade+"\nLetter grade = C");
+				}
+				else if(numGrade > 59){
+					alert("Number grade = "+numGrade+"\nLetter grade = D");
+				}
+				else{
+					alert("Number grade = "+numGrade+"\nLetter grade = F");
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+<section>
+    <h1>This page is displayed after the JavaScript is executed</h1>
+</section>
+</body>
+</html>

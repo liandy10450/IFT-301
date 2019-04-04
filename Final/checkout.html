@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<!-- Programmer: Andy Li 
+		     Project: Final
+			 Class: IFT 301
+			 Semester: Fall 2018-->
+<meta charset="UTF-8">
+<title>Order Form</title>
+<style>
+	header{
+		background-color: FireBrick;
+		margin: 5px;
+		margin-bottom: 0px;
+		border-style: solid;
+		border-width: 5px;
+		border-bottom-style: none;
+	}
+	nav{		
+		background-color: FireBrick;	
+		border-style: solid;
+		border-width: 5px;
+	}
+	ul.nav{
+		list-style-type: none;
+		margin: 0;
+		padding: 0;		
+	}
+	ul>li{
+		display:inline
+	}
+	li a{
+		
+		color: white;
+		text-align: center;
+		padding: 14px 16px;
+	}
+	section{
+		text-align: center;
+		background-color: wheat
+	}
+	aside{
+		background-color: wheat;		
+	}
+	body{
+		background-image: url("http://blog.hepdata.com/wp-content/uploads/2016/07/LA-backdrop-621x274.png");
+		background-color: #FDF5E6;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	img{
+		width: 200px;
+	}
+	form{
+		text-align: left;
+		margin: auto;
+		width: 50%;
+		padding: 10px;
+		border: 2px solid grey;
+	}
+</style>
+</head>
+
+<body>
+	<header>		
+		<a href="index.html">
+			<img src="img/Logo.png" alt = "Logo of Resturant">
+		</a>
+	</header>
+	<!-- Nav Bar -->
+	<nav>
+		<ul>
+			<li><a href="homePage.html">Home</a></li>
+			<li><a href="menu.html">Shop Hotdogs</a></li>
+			<li><a href="contact.html">Contact Us</a></li>
+		</ul>
+	</nav>
+	<!-- Nav Bar End-->
+
+	<section>
+		<h1>How do You want your Hot Dog Today?</h1>
+		<!-- User Selects Method -->	
+		<a href="delivery.html">
+			<img src="https://cdn4.iconfinder.com/data/icons/tech-support-4/28/speedy_delivery-512.png" alt = "Delivery">
+		</a>
+		<a href="checkout.html">
+			<img src="https://cdn3.iconfinder.com/data/icons/restaurant-34/24/takeout_food_carryout_chinese_fast-512.png" alt = "Carry Out">
+		</a>
+		<form>
+			<label>City:  
+					<input type="text" name="city" /><br /></label>
+			<label>State:  
+					<input type="text" name="state" /><br /></label>
+			- OR -<br />
+			<label>Zip Code:  
+					<input type="text" name="zip" /><br /></label>
+			<button type="submit" formaction="takeoutform.html">Continue to Order</button>
+		</form>		
+	</section>
+</body>
+</html>

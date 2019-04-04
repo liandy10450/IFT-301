@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Programmer: Andy Li 
+		     Project: HW6_1
+			 Class: IFT 301
+			 Semester: Fall 2018-->
+    <meta charset="UTF-8">	
+    <title>Convert from Fahrenheit to Centigrade</title>
+    <script>
+	   //while loop runs forever until user enters 999 for fahrenheit
+	   while(true){
+			var isValid = true;
+				var tempFah = 
+					prompt("Enter Farhenheit Temperature","");
+				tempFah = parseFloat(tempFah);
+				if(tempFah==999){//break out of loop when user enters 999
+					break;
+				}				
+				if(tempFah <-100 || tempFah>212){//incorrect range, input must be between -100 to 212
+					alert ("You entered "+tempFah+"\n"+"Entry must range from -100 to +212.");
+					isValid = false;
+				}
+		    if(isValid){
+				var tmpCel = (tempFah - 32)*5/9;
+				alert ("Fahrenheit is "+tempFah+"\n"+"Celsius is "+tmpCel);
+		    }			
+	   }	   	   
+    </script>
+</head>
+<body>
+    <main>
+        <h1>Thanks for using the temperature converter</h1>
+    </main>
+</body>
+</html>
